@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>rick piper scissirs</title>
+</head>
+<body>
+    
+    <div class="reset-game">
+        <button class="reset header-button">
+            RESET GAME
+        </button>
+    </div>
+    <div class="main-container">
+        <div class="score-area">
+            <div class="game-name">
+                <p>ROCK</p>
+                <p>PAPER</p>
+                <p>SCISSORS</p>
+            </div>
+            <div class="score-container">
+                <div class="score computer">
+                    <p>COMPUTER</p>
+                    <p>SCORE</p>
+                    <p id="user-score" class=" score-no"></p>
+                </div>
+                <div class="score user">
+                    <p>YOUR</p>
+                    <p>SCORE</p>
+                    <p id="pc-score" class=" score-no"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <div class="playground">
+                <div class="triangle">
+                    <img class="tri-img" src="/assets/triangle.png" alt="" srcset="">
+                </div>
+                
+                <div class="play-icons" id="rock">
+                    <button class="icon-choice-btn button">      
+                        <img src="/assets/rock.svg" alt="">   
+                    </button>
+                </div>
+                
+                <div class="play-icons " id="scissors">
+                    <button class="icon-choice-btn button" >
+                        <img src="/assets/scissors.svg" alt="">
+                    </button>
+                </div>
+                
+                <div class="play-icons " id="paper">
+                    <button class="icon-choice-btn button">
+                        <img src="/assets/paper.svg" alt="">
+                    </button>
+                </div>
+            </div>
+
+            <div class="each-round-result inactive">
+                <div class="choice" id="user-choice">
+                    <p>YOU PICKED</p>
+                    <div class="level level1 ">
+                        <div class="level level2">
+                            <div class="level level3">
+                                <div   class="icon user-icon-div">
+                                    <img id="user-icon" src="/assets/paper.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="each-round-msg">
+                    <p class="user-msg"></p>
+                    <p>AGAINST PC</p>
+                    <button class="play-again button">
+                        PLAY AGAIN
+                    </button>
+                </div>
+                <div class="choice" id="pc-choice">
+                    <p>PC PICKED</p>
+                    <div class="level level1">
+                        <div class="level level2">
+                            <div class="level level3">
+                                <div class="icon pc-icon-div">
+                                    <img id="pc-icon" src="" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <div class="rules-card inactive">
+        <div class="rules">
+            <h3>Game Rules</h3>
+            <ul class="rules-list">
+                <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.</li>
+                <li> Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+                <li>If both players lay down the same hand, each player lays down another hand</li>    
+            </ul>
+        </div>
+        <div class="cross button">
+            <img src="/assets/X.svg" alt="">
+        </div>
+    </div>
+
+    <div class="hurray-container inactive">
+        <div class="hurray">
+            <div class="decoration">
+                <img src="/assets/hurray-img.png" alt="">
+            </div>
+            <div class="hurray-msg">
+                <p id="msg1">HURRAY!!</p>
+                <p id="msg2"> YOU WON THE GAME</p>
+            </div>
+            <button id="hurray-play-again" class="play-again button">PLAY AGAIN</button>
+        </div>
+    </div>
+    
+    <button  id="next" class="footer-button inactive">NEXT</button>
+    <button id="rules-button" class="footer-button button">RULES</button>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
