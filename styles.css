@@ -245,9 +245,20 @@ body{
     
 }
 
+@keyframes border-animation {
+    0% {
+    }
+    50% {
+      border-color: transparent;
+    }
+    100% {
+      
+    }
+  }
 .level{
     border: 16px solid transparent;
     border-radius: 50%;
+    animation: border-animation 1s infinite linear;
 }
 
 .icon{
