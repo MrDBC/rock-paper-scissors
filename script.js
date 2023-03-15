@@ -1,4 +1,3 @@
-// let userScore=0, pcScore =0;
 
 // localStorage.removeItem('userScore')
 // localStorage.removeItem('pcScore')
@@ -87,7 +86,15 @@ pcIconDiv = document.getElementsByClassName('pc-icon-div')[0]
 const next = document.getElementById('next')
 const hurrayPlayAgain = document.getElementById('hurray-play-again')
 
+
+
+
+
+
+
 // ------------------------------------------------------
+// RULES BOOK
+
 // for opening & closing the rules popup
 rulesOpenBtn.addEventListener('click', ()=>{
     rulesCard.classList.remove('inactive')
@@ -99,6 +106,11 @@ rulesCloseBtn.addEventListener('click', ()=>{
 })
 
 
+
+
+// -------------------------------------------------------------
+// PLAY FUNCTIONALITY
+
 // whenever we click 1 of the play icons, that playgound container
 // should disappear and result container should appear
 iconChoiceBtns.forEach(button =>{
@@ -107,8 +119,6 @@ iconChoiceBtns.forEach(button =>{
         eachRoundResult.classList.remove('inactive')
     })
 })
-
-
 // play again button functionality
 playAgain.addEventListener('click', ()=>{
 
@@ -124,6 +134,10 @@ playAgain.addEventListener('click', ()=>{
 })
 
 
+
+// ---------------------------------------------------------------
+// related to celebration page
+
 // next button functionality
 next.addEventListener('click', ()=>{
     mainContainer.classList.add('inactive')
@@ -131,7 +145,6 @@ next.addEventListener('click', ()=>{
     hurrayContainer.classList.remove('inactive')
     
 })
-
 hurrayPlayAgain.addEventListener('click', ()=>{
 
 
@@ -150,7 +163,12 @@ hurrayPlayAgain.addEventListener('click', ()=>{
 
 
 
-// -----------main game functionality ----------------
+
+
+
+
+// -----------main game LOGIC -----------------------------
+// USER WINS | LOSES | DRAWS
 
 const userWins= ()=>{
     userMsg.innerHTML = "YOU WON"
@@ -164,7 +182,6 @@ const userWins= ()=>{
     level2[0].style.borderColor = circles[2]
     level3[0].style.borderColor = circles[3]
 }
-
 const userLoses= ()=>{
     userMsg.innerHTML = "YOU LOST"
     // localStorage.userScore =0;
@@ -175,11 +192,14 @@ const userLoses= ()=>{
     level2[1].style.borderColor = circles[2]
     level3[1].style.borderColor = circles[3]
 }
-
 const userDraws= ()=>{
     userMsg.innerHTML= "TIE UP"
    
 }
+
+
+//------------------------------------------------------------
+// TAKES USER CHOICE , GENERATES PC CHOICE and decides the winner
 
 const playGame=(userChoice)=>{
     const options = ['r', 'p', 's']
@@ -217,6 +237,11 @@ const playGame=(userChoice)=>{
     pcIconDiv.style.borderColor = iconColors[pcChoice]
 }
 
+
+
+//--------------------------------------------------------------
+// USER CLICKS ON 1/3 CHOICES 
+
 const startGame= ()=>{
     rock.addEventListener('click', ()=>{
         playGame('r')
@@ -234,14 +259,13 @@ startGame()
 
 
 
-//reset scores
-
+//reset scores after clcking "RESET GAME" button
 resetBtn.addEventListener('click', ()=>{
     window.location.reload()
     localStorage.setItem( 'userScore' ,0);
     localStorage.setItem( 'pcScore' ,0)
 })
 
-// set once every reload
+// set scores once every reload ( from LOCAL STORAGE)
 userScore.innerHTML= localStorage.getItem( 'userScore');
 pcScore.innerHTML = localStorage.getItem('pcScore');
